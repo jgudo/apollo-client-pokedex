@@ -10,6 +10,7 @@ export interface IPokemon {
     minimum: string;
     maximum: string
   };
+  evolutions: IPokemon[];
   classification: string;
   types: string[];
   resistant: string[];

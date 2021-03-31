@@ -27,6 +27,10 @@ const Filters = () => {
         <Select.Option value="poison">Poison</Select.Option>
         <Select.Option value="flying">Flying</Select.Option>
         <Select.Option value="ground">Ground</Select.Option>
+        <Select.Option value="steel">Steel</Select.Option>
+        <Select.Option value="ice">Ice</Select.Option>
+        <Select.Option value="bug">Bug</Select.Option>
+        <Select.Option value="fairy">Fairy</Select.Option>
       </Select>
     </Row>
   );
