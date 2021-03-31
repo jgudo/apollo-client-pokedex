@@ -1,7 +1,7 @@
-import { Col, Row, Typography } from 'antd'
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Filters from './Filters'
+import logo from '@app/assets/logo.png';
+import { Col, Row, Typography } from 'antd';
+import { Link } from 'react-router-dom';
+import Filters from './Filters';
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
       <Row wrap={false} justify="center" align="middle">
         <Col style={{ textAlign: 'center' }}>
           <Link to="/">
-            <Typography.Title level={1}>PokéMo</Typography.Title>
+            <img className="logo" src={logo} alt="PokeMo logo" />
           </Link>
           <Typography.Paragraph>Gotta catch 'em all!</Typography.Paragraph>
         </Col>
