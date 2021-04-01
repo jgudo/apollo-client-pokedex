@@ -6,6 +6,7 @@ export const CORE_POKEMON_FIELDS = gql`
     number
     name
     image
+    classification
     evolutions {
       id
       number

@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.less';
+import FilterProvider from './provider/FilterProvider';
 import reportWebVitals from './reportWebVitals';
 
 const client = new ApolloClient({
@@ -15,7 +16,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <FilterProvider>
+        <App />
+      </FilterProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -22,6 +22,68 @@
 
 .ant-card-cover {
   height: 100%;
+  position: relative;
+  background: #fff;
+  z-index: 2;
+}
+
+.pokemon-card {
+  border: 1px solid #f4f4f4;
+  transition: all .2s ease;
+  position: relative;
+  padding: 1px;
+  background: #fff;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: @primary-color;
+    top: -1px;
+    left: -1px;
+    z-index: 0;
+    transition: all .2s ease;
+    visibility: hidden;
+  }
+
+  &:after {
+    opacity: .1;
+  }
+
+  &:before {
+    opacity: .3;
+  }
+
+  &:hover {
+    z-index: 3;
+    border: 1px solid @primary-color;
+    box-shadow: 0 10px 20px rgba(0,0,0, .1);
+    transform: translate(5px, 5px);
+  }
+
+  .ant-card-body {
+    padding-top: 0;
+    position: relative;
+    background: #fff;
+    z-index: 2;
+  }
+
+}
+
+.pokemon-card:hover {
+  &:after {
+    top: -10%;
+    left: -10%;
+    visibility: visible;
+  }
+
+  &:before {
+    top: -5%;
+    left: -5%;
+    visibility: visible;
+  }
 }
 
 .pokemon-card-image {
@@ -43,4 +105,20 @@
   height: 400px;
   padding: 5%;
   object-fit: contain;
+}
+
+.pokemon-type-badge-lg {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.pokemon-type-badge-sm {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 2px;
 }

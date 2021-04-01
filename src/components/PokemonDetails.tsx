@@ -7,6 +7,8 @@ interface IProps {
   pokemon: IPokemon;
 }
 
+const elementImageURL = 'https://res.cloudinary.com/jgudo/image/upload/v1617244060/elements';
+
 const PokemonDetails: React.FC<IProps> = ({ pokemon }) => {
   const history = useHistory();
 
@@ -56,7 +58,14 @@ const PokemonDetails: React.FC<IProps> = ({ pokemon }) => {
         </Row>
         <br />
         <Typography.Text type="secondary">Pokemon Types</Typography.Text>
-        <Typography.Title level={4} style={{ marginTop: '5px' }}>{pokemon.types.join(',  ')}</Typography.Title>
+        <br />
+        <Row>
+          {pokemon.types.map(type => (
+            <Tooltip placement="top" title={`${type} Type`}>
+              <img className="pokemon-type-badge-lg" src={`${elementImageURL}/${type}.svg`} alt={type} />
+            </Tooltip>
+          ))}
+        </Row>
         <br />
         <Typography.Text type="secondary">Resistant</Typography.Text>
         <Typography.Title level={4} style={{ marginTop: '5px' }}>{pokemon.resistant.join(',  ')}</Typography.Title>
